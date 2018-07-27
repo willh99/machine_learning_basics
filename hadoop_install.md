@@ -7,7 +7,7 @@ INSTALL HADOOP FROM SOURCES ON LAPTOP OR DESKTOP
 
 Step 1: Download Hadoop
 -----------------------
-*Unless otherwise noted, the following steps are done by root*
+*Unless otherwise noted, the following steps are done by root.*
 *Download the latest distribution from the Hadoop web site (http://hadoop.apache.org/).*
 *For example:*
 
@@ -27,7 +27,7 @@ Step 2: Set JAVA_HOME and HADOOP_HOME
 `java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el6_9.x86_64`
 
 *If using RHEL (or variant) use java-1.7.0-openjdk RPM install if needed,*
-*as root, "yum install java-1.7.0-openjdk-devel yum install java-1.7.0-openjdk"*
+*as root, "yum install java-1.7.0-openjdk-devel yum install java-1.7.0-openjdk".*
 *For Hadoop 2, the recommended version of Java can be found at*
 *http://wiki.apache.org/hadoop/HadoopJavaVersions*
 
