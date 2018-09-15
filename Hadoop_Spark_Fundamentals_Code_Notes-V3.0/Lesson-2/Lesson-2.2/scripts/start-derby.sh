@@ -1,0 +1,1 @@
+su hive -c ". /etc/profile.d/derby.sh; /bin/rm -f  $DERBY_HOME/data/metastore_db/*.lck; nohup /opt/db-derby-10.13.1.1-bin/bin/startNetworkServer -h 0.0.0.0 >> /opt/db-derby-10.13.1.1-bin/logs/derby.log &"

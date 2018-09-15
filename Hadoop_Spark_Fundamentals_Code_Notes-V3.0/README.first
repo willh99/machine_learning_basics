@@ -1,0 +1,19 @@
+Date: June 12, 2018 
+
+These files are used in the Hadoop Fundamentals video Third Edition
+
+BONUS: There is now a Linux Hadoop Minimal Virtual Machine (LHM VM) that can be run from a laptop using 
+Virtual Box or VMWare. The idea is similar to the Hortonworks Sandbox in Lesson 2.1, however
+the LHM uses far less resources. Please see 
+
+  https://www.clustermonkey.net/download/Hands-on_Hadoop_Spark
+
+for more information. Most of the examples (Excluding Oozie, Ambari, and some of the bigger benchmarks)
+will run on this machine. This VM can be used instead of installing Hadoop, Spark, Hive, Pig, and Zeppelin
+as described in Lesson 2.2 and Lesson 2.3
+
+Please direct any questions, comments, or corrections to: Douglas Eadline, deadline@eadline.org
+
+--
+Doug
+

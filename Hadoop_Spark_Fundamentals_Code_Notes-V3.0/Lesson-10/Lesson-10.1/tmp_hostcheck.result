@@ -1,0 +1,26 @@
+[metadata]
+created = 2017-10-02 16:57:51.164310
+
+[users]
+usr_list = oozie,hive,zeppelin,ambari-qa,flume,hdfs,storm,spark,mapred,hbase,tez,zookeeper,mahout,falcon,sqoop,yarn,hcat,ams
+usr_homedir_list = /home/oozie,/home/hive,/home/zeppelin,/home/ambari-qa,/home/flume,/home/hdfs,/home/storm,/home/spark,/home/mapred,/home/hbase,/home/tez,/home/zookeeper,/home/mahout,/home/falcon,/home/sqoop,/home/yarn,/home/hcat,/home/ams
+
+[alternatives]
+symlink_list = 
+target_list = 
+
+[directories]
+dir_list = /etc/hadoop,/etc/hbase,/etc/hive,/etc/oozie,/etc/sqoop,/etc/zookeeper,/etc/storm,/etc/hive-hcatalog,/etc/tez,/etc/falcon,/etc/hive-webhcat,/etc/slider,/etc/storm-slider-client,/etc/spark,/etc/pig,/etc/phoenix,/etc/accumulo,/etc/ambari-metrics-collector,/etc/ambari-metrics-monitor,/etc/zeppelin,/var/run/hadoop,/var/run/hbase,/var/run/hive,/var/run/oozie,/var/run/sqoop,/var/run/zookeeper,/var/run/storm,/var/run/hive-hcatalog,/var/run/falcon,/var/run/webhcat,/var/run/hadoop-hdfs,/var/run/hadoop-yarn,/var/run/hadoop-mapreduce,/var/run/spark,/var/run/accumulo,/var/run/ambari-metrics-collector,/var/run/ambari-metrics-monitor,/var/run/zeppelin,/var/log/hadoop,/var/log/hbase,/var/log/hive,/var/log/oozie,/var/log/sqoop,/var/log/zookeeper,/var/log/storm,/var/log/hive-hcatalog,/var/log/falcon,/var/log/webhcat,/var/log/hadoop-hdfs,/var/log/hadoop-yarn,/var/log/hadoop-mapreduce,/var/log/spark,/var/log/accumulo,/var/log/ambari-metrics-collector,/var/log/ambari-metrics-monitor,/var/log/zeppelin,/usr/lib/flume,/usr/lib/storm,/usr/lib/ambari-metrics-collector,/var/lib/hive,/var/lib/oozie,/var/lib/zookeeper,/var/lib/hdfs,/var/lib/hadoop-hdfs,/var/lib/hadoop-yarn,/var/lib/hadoop-mapreduce,/var/lib/yarn,/var/lib/spark,/var/lib/ambari-metrics-collector,/var/lib/zeppelin,/var/tmp/oozie,/var/tmp/sqoop,/tmp/hive,/tmp/ambari-qa,/tmp/hadoop-hdfs,/hadoop/oozie,/hadoop/zookeeper,/hadoop/hdfs,/hadoop/storm,/hadoop/falcon,/hadoop/yarn,/usr/hdp/current
+
+[processes]
+proc_list = 
+
+[metadata]
+created = 2017-10-02 16:25:13.987165
+
+[packages]
+pkg_list = oozie_2_6_2_0_205-sharelib-sqoop,pig_2_6_2_0_205,ambari-infra-solr-client,hadoop_2_6_2_0_205-libhdfs,hive_2_6_2_0_205-hcatalog,oozie_2_6_2_0_205-sharelib-hive2,oozie_2_6_2_0_205-sharelib-mapreduce-streaming,hadoop_2_6_2_0_205,oozie_2_6_2_0_205-sharelib-hcatalog,ranger_2_6_2_0_205-hdfs-plugin,tez_2_6_2_0_205,oozie_2_6_2_0_205-sharelib-hive,bigtop-tomcat,spark2_2_6_2_0_205-python,hadoop_2_6_2_0_205-client,hive2_2_6_2_0_205,hive2_2_6_2_0_205-jdbc,hadoop_2_6_2_0_205-hdfs,spark2_2_6_2_0_205-yarn-shuffle,storm_2_6_2_0_205,oozie_2_6_2_0_205-sharelib-pig,accumulo_2_6_2_0_205,spark_2_6_2_0_205,shc_2_6_2_0_205,oozie_2_6_2_0_205-common,hive_2_6_2_0_205-jdbc,extjs,hive_2_6_2_0_205-webhcat,storm_2_6_2_0_205-slider-client,oozie_2_6_2_0_205-client,hive_2_6_2_0_205,oozie_2_6_2_0_205-webapp,sqoop_2_6_2_0_205,ranger_2_6_2_0_205-storm-plugin,bigtop-jsvc,ambari-metrics-grafana,hadoop_2_6_2_0_205-mapreduce,datafu_2_6_2_0_205,ranger_2_6_2_0_205-hbase-plugin,atlas-metadata_2_6_2_0_205-falcon-plugin,hadoop_2_6_2_0_205-yarn,atlas-metadata_2_6_2_0_205-storm-plugin,spark_llap_2_6_2_0_205,spark_2_6_2_0_205-yarn-shuffle,lzo,oozie_2_6_2_0_205,oozie_2_6_2_0_205-sharelib-spark,phoenix_2_6_2_0_205,oozie_2_6_2_0_205-sharelib,livy2_2_6_2_0_205,atlas-metadata_2_6_2_0_205-sqoop-plugin,ranger_2_6_2_0_205-hive-plugin,ambari-metrics-hadoop-sink,zookeeper_2_6_2_0_205,ambari-infra-solr,slider_2_6_2_0_205,ambari-metrics-collector,hbase_2_6_2_0_205,ambari-metrics-monitor,zeppelin_2_6_2_0_205,tez_hive2_2_6_2_0_205,ranger_2_6_2_0_205-yarn-plugin,zookeeper_2_6_2_0_205-server,smartsense-hst,atlas-metadata_2_6_2_0_205-hive-plugin,spark2_2_6_2_0_205,falcon_2_6_2_0_205,compat-readline5,oozie_2_6_2_0_205-sharelib-distcp,hdp-select,spark_2_6_2_0_205-python,livy_2_6_2_0_205
+
+[repositories]
+repo_list = HDP-2.6
+
