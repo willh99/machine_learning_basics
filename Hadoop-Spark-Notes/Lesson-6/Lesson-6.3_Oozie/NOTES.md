@@ -10,6 +10,36 @@ Oozie Version: 4.0.0
 
 Reference: http://oozie.apache.org/docs/4.0.0/index.html
  
+## What is Apache Oozie?
+Oozie is a workflow scheduler system to run and manage Apache Hadoop jobs
+* Oozie **Workflow** jobs are represented as Directed Acyclical Graphs (DAGs)
+of actions. Jobs are run on submission. DAGs contain no 'loops'
+* Oozie **Coordinator** jobs are repetitive tasks and are often triggered
+by time (frequency) and data availability
+* Oozie is integrated with the rest of the Hadoop stack supporting several types
+of Hadoop jobs out of the box (such as Java map-reduce, Pig, Hive, etc.) as well
+as system specific jobs (i.e. Java programs and shell scripts)
+* Oozie is scalable, reliable, and an extensible system. It provides a CLI
+and a web UI for monitoring
+
+An Oozie workflow is a collection of actions (i.e. MapReduce jobs, Pig jobs)
+arranged in a control dependency DAG. The "control dependency" from one
+action to another means that the second action can't run until the first
+action has completed.
+
+#### Apache Oozie Features
+* Oozie workflows definitions are written in hPDL (an XML Process Definition language)
+* Oozie workflow actions start jobs on a Hadoop cluster. Upon action completion,
+the remote systems callback Oozie to notify the action completion, at this point
+Ozzie proceeds to the next action in the workflow
+* Oozie workflows contain **control flow nodes** and **action nodes** 
+(These are graphical nodes, not hardware nodes)
+* Control flow nodes define the beginning and the end of a workflow (start, end,
+and fail nodes)
+* Oozie provides support for different types of actions nodes (Hadoop MapReduce,
+HDFS, Pig, Hive, SSH, HTTP, eMail, etc.). Oozie can be extended to support
+additional types of actions.
+
 
 #### Step 1: Set hadoop.proxyuser.oozie.groups in core-site.xml
 

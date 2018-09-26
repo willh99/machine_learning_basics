@@ -6,6 +6,10 @@
 * Hadoop Pig Examples
 * Source: http://pig.apache.org/docs/r0.10.0/start.html
 
+## What is Pig?
+Apache Pig is a high-level language for running MapReduce applications with
+Hadoop. Users write application scripts using a higher level "database" like
+notation known as PigLatin.
 
 * Copy the data file to this directory  
 

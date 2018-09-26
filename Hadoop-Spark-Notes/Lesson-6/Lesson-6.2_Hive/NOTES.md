@@ -6,6 +6,13 @@
   * http://gettingstarted.hadooponazure.com/hw/hive.html#_Task_3:_Create_1
   * http://www.johnandcailin.com/blog/cailin/exploring-apache-log-files-using-hive-and-hadoop
 
+## What is Hive?
+Apache Hive is a data warehouse infrastructure built on top of Hadoop.
+Originally developed by Facebook and donated to Apache, Hive provides data
+summarization, ad-hoc queries, and the analysis of large datasets using data
+in HDFS. If provides a mechanism to query the data using
+an SQL-like language called HiveQL.
+
 1. Make sure metastor is running, start as user hive   
 
 `nohup hive --service metastore > /var/log/hive/hive.out 2> /var/log/hive/hive.log &`
