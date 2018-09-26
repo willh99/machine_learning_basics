@@ -1,24 +1,34 @@
-Apache Hadoop and Spark Fundamentals (Third Edition)
+# Apache Hadoop and Spark Fundamentals (Third Edition)
 
-LESSON 6.2: Demonstrate a Hive example
+## LESSON 6.2: Demonstrate a Hive example
 
-# source
-# http://gettingstarted.hadooponazure.com/hw/hive.html#_Task_3:_Create_1
-# http://www.johnandcailin.com/blog/cailin/exploring-apache-log-files-using-hive-and-hadoop
-#
-# Make sure metastor is running, start as user hive 
-nohup hive --service metastore > /var/log/hive/hive.out 2> /var/log/hive/hive.log &
+* Source:
+  * http://gettingstarted.hadooponazure.com/hw/hive.html#_Task_3:_Create_1
+  * http://www.johnandcailin.com/blog/cailin/exploring-apache-log-files-using-hive-and-hadoop
 
-# start hive
-hive
-# simple test
+1. Make sure metastor is running, start as user hive   
+
+`nohup hive --service metastore > /var/log/hive/hive.out 2> /var/log/hive/hive.log &`
+
+2. start hive  
+
+`hive`
+
+3. simple test   
+```
 hive> CREATE TABLE pokes (foo INT, bar STRING);
 hive> SHOW TABLES;
 hive> DROP TABLE pokes;
-# create, load and run a query
+```
+
+4. create, load and run a query   
+```
 hive> CREATE TABLE logs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ';
 hive> LOAD DATA LOCAL INPATH 'sample.log' OVERWRITE INTO TABLE logs;
 hive> SELECT t4 AS sev, COUNT(*) AS cnt FROM logs WHERE t4 LIKE '[%' GROUP BY t4;
-# exit hive
-hive> exit;
+```
+
+5. exit hive  
+
+`hive> exit;`
 
