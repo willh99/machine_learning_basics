@@ -1,66 +1,70 @@
-Apache Hadoop and Spark Fundamentals (Third Edition)
+# Apache Hadoop and Spark Fundamentals (Third Edition)
 
-Lesson 8.2 USE SPARK TO IMPORT DATA INTO HDFS
+# Lesson 8.2 USE SPARK TO IMPORT DATA INTO HDFS
 
-#
-# Example commands to enter data (CSV/JSON) into Spark using PySpark 
-#
-# Start PiSpark
+Example commands to enter data (CSV/JSON) into Spark using PySpark 
 
-  pyspark 
+* Start PiSpark  
+`pyspark `
 
-# Use quit() or Ctrl-D to exit
+* Use `quit()` or `Ctrl-D` to exit
 
-# Import some functions:
-
+* Import some functions:
+```
 from pyspark.sql import SQLContext
 from pyspark.sql.types import *
 from pyspark.sql import Row
+```
 
-# Create the SQL context
+* Create the SQL context
 
-sqlContext = SQLContext(sc)
+`sqlContext = SQLContext(sc)`
 
-#read in CSV data
+* read in CSV data
 
-csv_data = sc.textFile("file:////home/deadline/Hadoop_Fundamentals_Code_Notes-V3/Lesson-8/Lesson-8.2/names.csv")
+`csv_data = sc.textFile("file:////home/deadline/Hadoop_Fundamentals_Code_Notes-V3/Lesson-8/Lesson-8.2/names.csv")`
 
-# confirm RDD
-
+* confirm RDD
+```
 type(csv_data)
 
 <class 'pyspark.rdd.RDD'>
+```
 
-# peak at the RDD data
-
+* peak at the RDD data
+```python
 csv_data.take(5)
 
 [u'EmployeeID,FirstName,Title,State,Laptop', u'10,Andrew,Manager,DE,PC', u'11,Arun,Manager,NJ,PC', u'12,Harish,Sales,NJ,MAC', u'13,Robert,Manager,PA,MAC']
+```
 
-# Split on comma, and see difference
-
+* Split on comma, and see difference
+```python
 csv_data  = csv_data.map(lambda p: p.split(","))
 csv_data.take(5)
 
 [[u'EmployeeID', u'FirstName', u'Title', u'State', u'Laptop'], [u'10', u'Andrew', u'Manager', u'DE', u'PC'], [u'11', u'Arun', u'Manager', u'NJ', u'PC'], [u'12', u'Harish', u'Sales', u'NJ', u'MAC'], [u'13', u'Robert', u'Manager', u'PA', u'MAC']]
+```
 
-
-# remove the header
-
+* remove the header
+```python
 header=csv_data.first()
 csv_data = csv_data.filter(lambda p:p != header)
+```
 
-# Place RRD into Spark DataFrame
+* Place RRD into Spark DataFrame
 
-df_csv = csv_data.map(lambda p: Row(EmployeeID = int(p[0]), FirstName = p[1], Title=p[2], State=p[3], Laptop=p[4])).toDF()
+`df_csv = csv_data.map(lambda p: Row(EmployeeID = int(p[0]), FirstName = p[1], Title=p[2], State=p[3], Laptop=p[4])).toDF()`
 
-# show the DataFrame format
+* show the DataFrame format  
+```
 df_csv
 
 DataFrame[EmployeeID: bigint, FirstName: string, Laptop: string, State: string, Title: string]
+```
 
-# show the first 5 rows of the DataFrame
-
+* show the first 5 rows of the DataFrame
+```
 df_csv.show(5)
 
 +----------+---------+------+-----+--------+
@@ -73,9 +77,10 @@ df_csv.show(5)
 |        14|    Laura|   MAC|   PA|Engineer|
 +----------+---------+------+-----+--------+
 only showing top 5 rows
+```
 
-#print the DataFrame schema
-
+* print the DataFrame schema
+```
 df_csv.printSchema()
 root
  |-- EmployeeID: long (nullable = true)
@@ -83,11 +88,11 @@ root
  |-- Laptop: string (nullable = true)
  |-- State: string (nullable = true)
  |-- Title: string (nullable = true)
+```
 
-
-# Create and Write a Hive External and Internal Table in pySpark
-# Similar to using Hive, just call Hive commands
-#
+* Create and Write a Hive External and Internal Table in pySpark
+Similar to using Hive, just call Hive commands
+```python
 from pyspark.sql import HiveContext
 sqlContext = HiveContext(sc)
 
@@ -102,10 +107,10 @@ sqlContext.sql("INSERT OVERWRITE TABLE MoreNames SELECT * FROM MoreNames_text")
 result = sqlContext.sql("FROM MoreNames SELECT EmployeeID, FirstName, State")
 
 result.show(5)
+```
 
-# Read a Hive table from Spark
-# Only read EmplyeeID and Laptop
-
+* Read a Hive table from Spark. Only read EmplyeeID and Laptop
+```
 sqlContext = HiveContext(sc)
 df_hive = sqlContext.sql("SELECT EmployeeID, Laptop  FROM names")
 
@@ -126,13 +131,12 @@ df_hive.printSchema()
 root
  |-- EmployeeID: integer (nullable = true)
  |-- Laptop: string (nullable = true)
+```
 
-
-# Read from JSON
-# Please note Spark expects each line to be a separate JSON object, 
-# so it will fail if you’ll try to load a pretty 
-# formatted JSON file.
-
+* Read from JSON
+  * Please note Spark expects each line to be a separate JSON object, 
+    so it will fail if you’ll try to load a pretty formatted JSON file.
+```
 from pyspark.sql import SQLContext
 sqlContext = SQLContext(sc)
 df_json = sqlContext.read.json("file:////home/deadline/Hadoop_Fundamentals_Code_Notes-V3/Lesson-8/Lesson-8.2/names.json")
@@ -175,4 +179,4 @@ root
  |-- Laptop: string (nullable = true)
  |-- State: string (nullable = true)
  |-- Title: string (nullable = true)
-
+```
