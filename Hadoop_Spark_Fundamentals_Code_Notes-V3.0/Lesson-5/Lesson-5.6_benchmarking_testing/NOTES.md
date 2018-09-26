@@ -9,8 +9,8 @@ Cluster: four nodes, 4-cores per node, GbE, 16 GB/node, two SSD's for HDFS (64G 
          node names are limulus, n0,n1,n2  
 
 _*Run examples as user (not root or user "hdfs")*_  
-_* To make the command lines shorter we will create a*_  
-_* environment define called YARN_EXAMPLES.*_  
+_*To make the command lines shorter we will create a*_  
+_*environment define called YARN_EXAMPLES.*_  
 
 *The YARN_YARN_EXAMPLES define is simply the path to the Hadoop*
 *examples jar file. This path will will vary by installation*
