@@ -2,9 +2,9 @@
 
 LESSON 2.2 INSTALL APACHE HADOOP, PIG, AND HIVE ON LAPTOP OR DESKTOP
 
-OS: Linux
-Platform: CentOS 6.9
-Hadoop Version: 2.8.1
+OS: Linux  
+Platform: CentOS 6.9  
+Hadoop Version: 2.8.1  
 
 *NOTE 1: The versions and download links may change! The following instructions*
 *should work with newer versions. Check the Apache website for each project*
@@ -65,6 +65,7 @@ The script "hadoop-setup-script.sh" (in the scripts directory) will perform
 Steps 3 through 9.  Run the script as root and skip to Step 10. Steps 3 through 9
 perform the same tasks as the script. 
   
+
     cd scripts
     sh hadoop-setup-script.sh
 
@@ -86,6 +87,7 @@ perform the same tasks as the script.
     chown hdfs:hadoop /var/data/hadoop/hdfs -R
 
 * Create the log directory and set the owner and group as follows:
+
 
     cd /opt/hadoop-2.8.1
     mkdir logs
@@ -185,6 +187,7 @@ perform the same tasks as the script.
 * Edit `/opt/hadoop-2.8.1/etc/hadoop/hadoop-env.sh` file to reflect the following 
   * (Don't forget to remove the "#" at the beginning of the line.):  
 
+
     HADOOP_HEAPSIZE=500
     HADOOP_NAMENODE_INIT_HEAPSIZE="500"
 
@@ -194,6 +197,7 @@ perform the same tasks as the script.
 * Edit yarn-env.sh to reflect the following: `JAVA_HEAP_MAX=-Xmx500m `
 * The following will need to added to yarn-env.sh: `YARN_HEAPSIZE=500`
 * Finally, edit hadoop-env.sh and add the following to the end:
+
 
     export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
     export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib "
@@ -264,7 +268,7 @@ You can add them to /etc/rc.local file
     ./yarn-daemon.sh start resourcemanager
     ./yarn-daemon.sh start nodemanager
     ./mr-jobhistory-daemon.sh start historyserver 
-    
+
     jps
     23090 Jps
     20546 JobHistoryServer
@@ -278,7 +282,8 @@ You can add them to /etc/rc.local file
 * There are two convenience scripts in the scripts directory to start and stop YARN services (run as root)
 You can add them to /etc/rc.local file
 
-    start-yarn.sh      
+
+    start-yarn.sh
     stop-yarn.sh
 
 #### Step 13: Verify the Running Services Using the Web Interface
@@ -298,23 +303,26 @@ You can add them to /etc/rc.local file
 
 Install Apache Pig
 ------------------
-OS: Linux
-Platform: CentOS 6.9
-Pig Version: 0.17
+OS: Linux  
+Platform: CentOS 6.9  
+Pig Version: 0.17  
 
 * As root, get sources:
 `wget -P /tmp http://mirrors.ibiblio.org/apache/pig/pig-0.17.0/pig-0.17.0.tar.gz`
 * Next extract the package in /opt:
+
 
     mkdir -p /opt/
     tar xvzf /tmp/pig-0.17.0.tar.gz -C /opt
 
 * set environment:  
 
+
     echo 'export PATH=$PATH:/opt/pig-0.17.0/bin; export PIG_HOME=/opt/pig-0.17.0;
     export PIG_CLASSPATH=/opt/hadoop-2.8.1/etc/hadoop' >/etc/profile.d/pig.sh
 
 * Create a Pig user and change ownership (do as root)
+
 
     useradd -g hadoop pig
     chown -R pig:hadoop /opt/pig-0.17.0
@@ -324,19 +332,21 @@ Pig Version: 0.17
 
 Install Apache Hive 
 -------------------
-OS: Linux
-Platform: CentOS 6.9
-Hive Version:  2.3.2
+OS: Linux  
+Platform: CentOS 6.9  
+Hive Version:  2.3.2  
 
 #### Step 1: Install and Configure Hive
 
 * As root, get sources, extract, create /etc/profile.d/hive.sh
+
 
     wget -P /tmp http://mirrors.ibiblio.org/apache/hive/hive-2.3.2/apache-hive-2.3.2-bin.tar.gz`
     tar xvzf /tmp/apache-hive-2.3.2-bin.tar.gz -C /opt
     echo 'export PATH=$PATH:/opt/apache-hive-2.3.2-bin/bin; export HIVE_HOME=/opt/apache-hive-2.3.2-bin' >/etc/profile.d/hive.sh
 
 * make needed directories in HDFS
+
 
     su - hdfs -c "hdfs dfs -mkdir -p /user/hive/warehouse"
     su - hdfs -c "hdfs dfs -chmod g+w /user/hive/warehouse"
@@ -368,6 +378,7 @@ Hive Version:  2.3.2
 
 * Create a Hive user and change ownership (do as root)
 
+
     useradd -g hadoop hive
     chown -R hive:hadoop /opt/apache-hive-2.3.2-bin
 
@@ -376,6 +387,7 @@ Hive Version:  2.3.2
 
 Hive needs a "metastore" database for metadata. The default is Apache Derby
 * install Apache Derby version 10.13.1.1 (Note version 10.13+ will not work with Java 1.7)
+
 
     wget -P /tmp http://mirrors.gigenet.com/apache//db/derby/db-derby-10.13.1.1/db-derby-10.13.1.1-bin.tar.gz
     tar xvzf /tmp/db-derby-10.13.1.1-bin.tar.gz -C /opt
@@ -386,10 +398,12 @@ Hive needs a "metastore" database for metadata. The default is Apache Derby
 
 * source these file to make sure `$DERBY_HOME` and `$HIVE_HOME` are defined
 
+
     source /etc/profile.d/derby.sh
     source /etc/profile.d/hive.sh
 
 * copy these libraries to `$HIVE_HOME`
+
 
     cp $DERBY_HOME/lib/derbyclient.jar $HIVE_HOME/lib
     cp $DERBY_HOME/lib/derbytools.jar $HIVE_HOME/lib
@@ -409,6 +423,7 @@ Hive needs a "metastore" database for metadata. The default is Apache Derby
 * There are two convenience scripts in the scripts directory to start and stop Derby (run as root)
 You can add them to /etc/rc.local file
 
+
     start-derby.sh  
     stop-derby.sh
 
@@ -419,13 +434,15 @@ You can add them to /etc/rc.local file
     `su - hdfs`
   * Enter "hive" at prompt. Output as follows. Ignore "which: no hbase" warning 
 
+
     $ hive
     which: no hbase in (/usr/lib64/qt-3.3/bin:/opt/hadoop-2.8.1/bin:/opt/db-derby-10.13.1.1-bin/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/bps/bin:/opt/apache-hive-2.3.2-bin/bin:/opt/pig-0.17.0/bin:/opt/userstat/bin:/home/hdfs/bin)
-    
+
     Logging initialized using configuration in jar:file:/opt/apache-hive-2.3.2-bin/lib/hive-common-2.3.2.jar!/hive-log4j2.properties Async: true
     Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. tez, spark) or using Hive 1.X releases.
 
   * Make sure hive is working (simple test) and quit.
+
 
     hive> show tables;
     OK
