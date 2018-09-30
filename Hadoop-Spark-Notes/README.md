@@ -1,7 +1,6 @@
 # Hadoop and Spark Fundementals
 
-##Table of Contents
-
+## Table of Contents
 1. Lesson 1 - What is Hadoop? Background Concepts
 2. Lesson 2 - Installing Hadoop from Source
 3. Lesson 3 - Hadoop Distributed File System (HDFS)
