@@ -2,9 +2,9 @@
 
 ## Table of Contents
 1. Lesson 1 - What is Hadoop? Background Concepts
-  * Installing Hadoop - [hadoop_install.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/hadoop-install.md)
-  * Installing Spark - [spark_install.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/spark_install.md)
-  * What is Hadoop MapReduce? - [hadoop_mapreduce.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/hadoop-mapreduce.md)
+   * Installing Hadoop - [hadoop_install.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/hadoop-install.md)
+   * Installing Spark - [spark_install.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/spark_install.md)
+   * What is Hadoop MapReduce? - [hadoop_mapreduce.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/hadoop-mapreduce.md)
   * What is Apache Spark - [spark.md](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-1/spark.md)
 2. Lesson 2 - Installing Hadoop from Source
 3. Lesson 3 - Hadoop Distributed File System (HDFS)
