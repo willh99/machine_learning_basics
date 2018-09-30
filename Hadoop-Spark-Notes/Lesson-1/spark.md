@@ -20,7 +20,7 @@ It also supports SQL queries, streaming data, machine learning, and graph
 algorithms. It is higher level than native MapReduce, so it can be used in
 place of Hive and/or Pig.
 
-<img scr="https://dzone.com/storage/temp/8571839-picture1.png" alt="Spark Core" width="75%">
+<img src="https://dzone.com/storage/temp/8571839-picture1.png" alt="Spark Core" width="75%">
 
 ## Spark Resilient Distributed Data Sets (RDDs)
 * RDDs are the fudamental data structures of Spark
