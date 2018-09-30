@@ -88,6 +88,7 @@ STORED AS PARQUET;
 
 `INSERT OVERWRITE TABLE Names_Parquet SELECT * FROM Names_text;`
 
+### [Parquet Format in Hive](https://acadgild.com/blog/parquet-file-format-hadoop)
 * save external table in Parquet format
 ```
 CREATE EXTERNAL TABLE IF NOT EXISTS Names_Parquet_Ext(
