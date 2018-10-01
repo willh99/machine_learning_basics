@@ -175,3 +175,36 @@ Which nodes are DataNodes, NFSGateways, NodeManagers. Here is our config:
 | n0      | yes       | yes        | yes       | yes           | no                   | no    | no          | no                  | no                 | no     |
 | n1      | yes       | no         | yes       | yes           | no                   | no    | no          | no                  | no                 | no     |
 | n2      | yes       | no         | yes       | yes           | no                   | no    | no          | no                  | no                 | no     |
+
+#### Step 8 - Customize Services
+Some additional information is needed for the setup of some services. Ambari
+will help by highlighting there services with a red number and giving addtional
+information when you hover over the server. For example, the NameNode needs to
+be told where to store its directories. We specified `/hadoop/hdfs/namenode/var/lib`
+as the main path and `/hdfs/namenode` as a backup.
+
+For the DataNode we specified:
+```
+/hdfs1/hadoop/hdfs/data/hdfs2/hadoop
+/hdfs/data
+```
+And for secondary NameNode in Advance Options:  
+`/hadoop/hdfs/namesecondary/var/hdfs/namesecondary`
+
+We also set blockreplication to 2 since this is a small, non-critical instance.
+This will save us some memory.
+
+###### We then moved on to the YARN configuraton:  
+yarn.nodemanger.local-dirs: `/hadoop/yarn/local/var/hadoop/yarn/local`  
+yarn.nodemanger.log-dirs:   `/hadoop/yarn/log/var/hadoop/yarn/log`
+
+###### Simply finish these configurations for the services
+
+#### Step 9 - Review
+Check the YAML and see that it is to your specification
+
+#### Step 10 - Install, Start, and Test
+Install can be monitored graphically in Ambari in real time.
+Check warnings for any orange bars.
+
+#### Step 11 - Summary

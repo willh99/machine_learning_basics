@@ -11,10 +11,11 @@ Cluster: four nodes, 4-cores per node, GbE, 16 GB/node, two SSD's for HDFS (64G 
 
 ### Background:
 
-We will be using a small cluster to demonstrate some basic command line functions
-The following list of tasks is only a quick summary of some common tasks.
+We will be using a small cluster to demonstrate some basic command line 
+functions for task which may not be suitable to be performed from the GUI.
+The following list of tasks is only a quick summary of some common tasks. 
 There are many other aspects to Hadoop and Spark administration (most of
-which can be done with Ambari)
+which can be done with Ambari).
 
 
 
