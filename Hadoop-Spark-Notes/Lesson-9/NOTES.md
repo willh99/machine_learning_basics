@@ -13,4 +13,5 @@ Zepplin is a web-based notebook that enables interactive data analytics.
 It provides data visualization which can be used with any language/
 data-processing-backend through its interpreter.
 
-<img src="https://dataminded.be/sites/default/files/blog/zeppelin1.png" alt="A Zepplin Graph" width="100%"
+<img src="https://dataminded.be/sites/default/files/blog/zeppelin1.png" 
+alt="A Zepplin Graph" width="100%">
