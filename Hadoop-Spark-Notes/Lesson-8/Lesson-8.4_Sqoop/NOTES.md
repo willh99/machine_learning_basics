@@ -243,8 +243,7 @@ Now use multiple mappers, clear resutls from previous import.
 
 * remove the table
 
-
-    mysql> Drop table `CityExportStaging`;
+`    mysql> Drop table CityExportStaging`;
 
  * remove data in table
 ```
@@ -252,5 +251,5 @@ Now use multiple mappers, clear resutls from previous import.
    mysql> delete from CityExportStaging;
 ```
 
-* clean-up imported files
+* clean-up imported files  
 `hdfs dfs -rm -r  -skipTrash sqoop-mysql-import/{country,city, canada-city}`
