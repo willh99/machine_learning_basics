@@ -35,6 +35,6 @@
    4. Lesson 8.4 - [Apache Sqoop](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-8/Lesson-8.4_Sqoop/NOTES.md)
 9. Lesson 9 - Using Zepplin Web Interface
 10. Lesson 10 - Hadoop Basics and Administration
-   1. Lesson 10.1 - [Apache Ambari 2.5 to Install Apache Hadoop](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-10/Lesson-10.1/NOTES.md)
-   2. Lesson 10.2 - [Simple Admin and Monitoring using CLI](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-10/Lesson-10.3_CL-Admin/NOTES.md)
-   3. Lesson 10.3 - [Additional Features of HDFS](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-10/Lesson-10.4_HDFS-Features/NOTES.md)
+    1. Lesson 10.1 - [Apache Ambari 2.5 to Install Apache Hadoop](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-10/Lesson-10.1/NOTES.md)
+    2. Lesson 10.2 - [Simple Admin and Monitoring using CLI](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-10/Lesson-10.3_CL-Admin/NOTES.md)
+    3. Lesson 10.3 - [Additional Features of HDFS](https://github.com/willh99/machine_learning_basics/blob/master/Hadoop-Spark-Notes/Lesson-10/Lesson-10.4_HDFS-Features/NOTES.md)
