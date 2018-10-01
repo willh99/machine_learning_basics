@@ -55,7 +55,7 @@ writing the key in the post install section.
 
 ### Step 2: Set up the Ambari Server and Agents
 
-Use wget to install the Ambari repo on the head node 
+Use wget to install the Ambari repo on the head node  
 Check on https://docs.hortonworks.com for latest version 
 
     wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
@@ -105,14 +105,14 @@ _*login="admin" password="admin"*_
 
 ### Step 4: If needed, Clean-up
 
-To clean out the install use `reset` 
-_*!!! It will wipe out database and require reinstall*_
+To clean out the install use `reset`  
+_*!!! It will wipe out database and require reinstall !!!*_
 
     ambari-server stop
     ambari-server reset
 
-To remove RPMS from nodes:
-_*!!! Careful: May delete accounts as well as RPMS*_
+To remove RPMS from nodes:  
+_*!!! Careful: May delete accounts as well as RPMS !!!*_
 Often not needed if doing a reset `reinstall`
 
     python /usr/lib/python2.6/site-packages/ambari_agent/HostCleanup.py
@@ -127,3 +127,51 @@ Use thiese steps
     chown falcon:hadoop /usr/hdp/current/falcon-server/server/webapp/falcon/WEB-INF/lib/je-5.0.73.jar
 
 
+## Ambari is Up! Now to Install Hadoop!
+Connect to port 8080 on localhost or admin node if accessing remotely
+
+`hostname:8080` -> `hostname:8080/#/login`  
+
+Default username: admin, password: admin
+
+Ambari should run checks on all installs, so you can be pretty confident that
+your packages will be installed as desired.
+
+#### Step 1 - Get Started
+Name your cluster and hit next
+
+#### Step 2 - Select Version
+Might as well use the latest HDP version unless you know you have legacy code
+that depends on an old version. A large cluster may benefit from pulling OS
+images from a local repository dude to their size and the required bandwidth
+for timely  installation.
+
+#### Step 3 - Install Options
+* Enter Your Target Hosts
+  * You may wish to enter Fully Qualified Domain Names (FQDN) to safety
+  * You can often get away with using assigned names (i.e. limulus, n0, ...)
+* Host Registration Information
+  * We are using manual registration since we have the ambari agent running on
+    all our nodes. This is **required** for manual registration
+
+#### Step 4 - Confirm Hosts
+Check your warnings and see that they will not cause issue for your installation.
+Example: Firewall configuration
+
+#### Step 5 - Choose Services
+Pick the packages that you want to install. HDFS, Pig, Hive, Spark, etc.
+
+#### Step 6 - Assign Masters
+You can configure your service distribution based on the specifications of your
+nodes. For example, you may wish to overload a node that has significantly 
+higher RAM or more cores.
+
+#### Step 7 - Assign Slaves and Clients
+Which nodes are DataNodes, NFSGateways, NodeManagers. Here is our config:
+
+| Node    | DataNodes | NFSGateway | NodeManger| Region Server | Phoenix Query Server | Flume | Livy Server | Spark Thrift Server | Livy Spark2 Server | Client |
+|---------|-----------|------------|-----------|---------------|----------------------|-------|-------------|---------------------|--------------------|--------|
+| limulus | yes       | no         | yes       | yes           | yes                  | yes   | yes         | yes                 | yes                | yes    |
+| n0      | yes       | yes        | yes       | yes           | no                   | no    | no          | no                  | no                 | no     |
+| n1      | yes       | no         | yes       | yes           | no                   | no    | no          | no                  | no                 | no     |
+| n2      | yes       | no         | yes       | yes           | no                   | no    | no          | no                  | no                 | no     |
