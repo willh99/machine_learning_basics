@@ -1,6 +1,6 @@
 # Apache Hadoop and Spark Fundamentals (Third Edition)
 
-# LESSON 8.3 APACHE FLUME
+## LESSON 8.3 APACHE FLUME
 
 OS: Linux  
 Platform: RHEL 6.3  
@@ -8,6 +8,22 @@ Hadoop Version: 2.4
 Hadoop Version: Hortonworks HDP 2.1 (Hadoop version 2.4)  
 Flume Version: 1.4.0  
 Reference: https://flume.apache.org/FlumeUserGuide.html  
+
+## What is Apache Flume
+Apache Flume is a distributed, reliable, and available system
+for collecting, aggregating and moving large amounts of event
+data (e.g. log files) from many different sources to a centralized
+data store (e.g. HDFS). It can be used for log files,
+social-media-generated data, email messages, and almost any
+continuous data sources.  
+<img src="https://flume.apache.org/_images/DevGuide_image00.png" alt="Flume diagram" width="75%">
+
+* Source - Knows how to get the web data
+* Channel - Buffer/Synchronizer to allow asynchronous operation between
+  source and sink. It can be in memory or on disk depending on your
+  persistance or speed requirements
+* Sink - Knows how/where to write to. Example: write to HDFS
+  * You can create a pipeline where sinks write to another flume source
 
 ### Step 1: Download Install Apache Flume
 
@@ -28,15 +44,15 @@ Reference: https://flume.apache.org/FlumeUserGuide.html
 
 * In another window
 ```
-telnet localhost 44444
+$ telnet localhost 44444
 
-  Trying ::1...
-  telnet: connect to address ::1: Connection refused
-  Trying 127.0.0.1...
-  Connected to localhost.
-  Escape character is '^]'.
-  testing  1 2 3
-  OK
+    Trying ::1...
+    telnet: connect to address ::1: Connection refused
+    Trying 127.0.0.1...
+    Connected to localhost.
+    Escape character is '^]'.
+    testing  1 2 3
+    OK
 ```
 
 * Flume agent shows

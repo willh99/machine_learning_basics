@@ -7,9 +7,22 @@ Platform: RHEL 6.3
 Hadoop Version: 2.4  
 Hadoop Version: Hortonworks HDP 2.1  
 Sqoop Version: 1.4.4  
-
 Reference: http://sqoop.apache.org/docs/1.4.5/SqoopUserGuide.html
- 
+
+## What is Apache Sqoop (Version 2)?
+Sqoop is a tool designed to transfer data between Hadoop and relational
+databases. You can use Sqoop to import data from a relational database
+management system (RDBMS) into the Hadoop Distributed File System (HDFS),
+transform the dtaa in Hadoop, and then export the data back into an RDBMS.
+
+You can use Sqoop with any JDBC-compliant database. Sqoop has been
+tested on the following databases: Microsoft SQL Server, PostgreSQL,
+MySQL, and Oracle.
+
+Sqoop version 2 does not suport "connectors" or data transfer from
+RDBMS directly to Hive or HBase or data transfer from HIve or HBase
+to you RDBMS. (There are pathways to accomplish these tasks)  
+<img src=://4zy7s42hws72i51dv3513vnm-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/Apache-Sqoop-Export-Architecture-Apache-Sqoop-Tutorial-Edureka.png" alt="Sqoop Process" width="75%">
 
 ### Step 1: Download and Load Sample MySQL Data
 
