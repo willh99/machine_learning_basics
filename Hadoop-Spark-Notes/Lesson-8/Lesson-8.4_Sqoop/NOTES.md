@@ -22,7 +22,7 @@ MySQL, and Oracle.
 Sqoop version 2 does not suport "connectors" or data transfer from
 RDBMS directly to Hive or HBase or data transfer from HIve or HBase
 to you RDBMS. (There are pathways to accomplish these tasks)  
-<img src=://4zy7s42hws72i51dv3513vnm-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/Apache-Sqoop-Export-Architecture-Apache-Sqoop-Tutorial-Edureka.png" alt="Sqoop Process" width="75%">
+<img src="http://4zy7s42hws72i51dv3513vnm-wpengine.netdna-ssl.com/wp-content/uploads/2018/02/Apache-Sqoop-Export-Architecture-Apache-Sqoop-Tutorial-Edureka.png" alt="Sqoop Process" width="75%">
 
 ### Step 1: Download and Load Sample MySQL Data
 
